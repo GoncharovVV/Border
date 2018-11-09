@@ -1,0 +1,331 @@
+
+// header
+.header {
+	position: relative;
+}
+/* headet top */
+	.header__top-row {
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+		padding: 15px 0 10px;
+		.container {
+			@include flex-container($align: center, $wrap: wrap);
+			@include to800 {
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		@include to800 {
+			position: absolute;
+			top: 100%;
+			width: 320px;
+			right: 0;
+			padding: 10px 0;
+			transform: translateY(-100%);
+			opacity: 0;
+			visibility: hidden;
+			z-index: 1000;
+			transition: transform .3s .02s;
+			background-color: #eee;
+		}
+		@include to440 {
+			width: 100%;
+		}
+	}
+	.download {
+		@include flex-container($align: center);
+		font-family: "MuseoSansCyrillic-700";
+		font-size: 14px;
+		margin: 0 86px 0 0;
+		@include to1024 {
+			margin: 0 0 5px;
+			width: 100%;
+		}
+	}
+	.download__ico {
+		margin: 0 13px 0 0;
+		@include to900 {
+			margin: 0 5px 0 0;
+		}
+	}
+	.download__link {
+		margin: 0 4px 0 0;
+		color: $color-dark;
+		transition: color .3s;
+	}
+	.downlod__format {
+		color: $color-green;
+	}
+	.info-nav__list {
+		@include to800 {
+			flex: 0 0 100%;
+			flex-wrap: wrap; 
+			padding: 10px 0 0;
+		}
+	}
+	.info-nav__list-item {
+		margin: 0 40px 0 0;
+		@include to1024 {
+			margin: 0 10px 0 0;
+		}
+		@include to800 {
+			flex: 1 1 100%;
+			margin: 0 0 5px;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+	.info-nav__link {
+		color: $color-dark;
+		font-family: "MuseoSansCyrillic-700";
+		font-size: 14px;
+		display: inline-block;
+		transition: color .3s;
+		@include to800 {
+			display: block;
+			text-align: center;
+			line-height: 24px;
+		}
+	}
+/* headet top */
+
+// header middle
+	.header__middle-row {
+		padding: 13px 10px;
+		@include flex-container($just: space-between, $wrap: wrap, $align: center);
+		position: relative;
+		z-index: 2;
+		@include to800 {
+			justify-content: center;
+			padding: 8px 10px;
+			background-color: $color-white;
+			z-index: 1001;
+		}
+	}
+	.main-link {
+		display: inline-block;
+		img {
+			display: block;
+		}
+		@include to900 {
+			width: 40%;
+		}
+		@include to800 {
+			width: auto;
+			margin: 0 0 15px;
+		}
+		@include to550 {
+			margin: 0 0 5px;
+		}
+	}
+	
+	.contact-info__column {
+		margin: 0 20px 0 0;
+		@include to550 {
+			width: 100%;
+			margin: 0 0 8px;
+		}
+	}
+	.contact-info {
+		align-items: flex-end;
+		flex-wrap: wrap;
+		flex-direction: column;
+		height: 62px;
+		align-content: flex-end;
+		@include to800 {
+			flex: 1 100%;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+    		height: auto;
+		}
+		@include to550 {
+			justify-content: center;
+		}
+	}
+	.contact-info__button-holder {
+		margin: 0 0 5px;
+		padding: 0 0 0 20px;
+		@include to800{			
+			margin: 0;
+			order: 2;
+			padding: 0 20px;
+			flex-grow: 1;
+			text-align: center;
+			.btn {
+				max-width: 250px;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+	.phone {
+		@include flex-container($align: center, $just: flex-end);
+		margin: 0 0 5px;
+		.svg-icon {
+			color: #eee;
+			font-size: 21px;
+			margin: 0 10px 0 0;
+			@include to1024 {
+				font-size: 16px;
+			}
+			@include to640 {
+				font-size: 14px;
+			}
+		}
+		span {
+			color: #222225;
+			font-family: "MuseoSansCyrillic-700";
+			font-size: 26px;
+			@include to1024 {
+				font-size: 20px;
+			}
+			
+		}
+		@include to800 { 
+			justify-content: flex-start;
+			margin: 0;
+			order: 1;
+		}
+		@include to700 {
+			flex: 1 0 50%;
+			margin: 0 0 5px;
+		}
+		@include to550 {
+			flex: 1 0 100%;
+			margin: 0 0 5px;
+			justify-content: center;
+		}
+	}
+	.email {
+		font-family: "MuseoSansCyrillic-100";
+		font-size: 14px;
+		color: #222225;
+		letter-spacing: 0.28px;
+		text-align: right;
+		a {
+			color: $color-green;
+		}
+		@include to800 {
+			order:3;
+		}
+		@include to700 {
+			flex: 1 0 50%;
+			order: 2;
+			margin: 0 0 5px;			
+		}
+		@include to550 {
+			flex: 1 0 100%;
+			text-align: center;
+			margin: 0 0 5px;			
+		}
+	}
+//header bottom
+	.header__bottom-row {
+		background-color: #eeeeee;
+		@include to900 {
+			background-color: transparent;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			max-width: 320px;
+			width: calc(100% - 20px);
+			z-index: 900;
+			opacity: 0;
+			visibility: hidden;
+			.container {
+				padding: 0;
+			}
+		}
+		@include to440 {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	.nav {
+		position: relative;
+		overflow: hidden;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: transparent;
+			width: 28px;
+			height: 28px;
+			border-radius: 50% 0 50% 50%;
+			transition: all .4s;
+		}
+	}
+	.nav__holder {
+		@include flex-container();
+		@include to900 {
+			flex-wrap: wrap;
+			transform: translate(100%, -50%) scale(0.5);
+			transition: all .4s;
+		}
+	} 
+	.nav__list {
+		flex: 1 1;
+		@include to900 {
+			flex: 1 100%;
+		}
+	}
+	.nav__link {
+		display: block;
+		text-align: center;
+		color:rgba(34,34,37,0);
+		transition: color .3s;
+		position: relative;
+		padding: 0 5px;
+		font: 900 12px/35px 'MuseoSansCyrillic-900', sans-serif;
+		&:before {
+			content: '';
+			height: 3px;
+			width: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: $color-green-light;
+			position: absolute;
+			z-index: 1;
+			transform: scale3d(0,0,0);
+			transition: transform .3s;
+		}
+		span {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			opacity: 1;
+			letter-spacing: 0.2px;
+			color: #222225;
+			font: 500 12px/35px 'MuseoSansCyrillic-500', sans-serif;
+			transition: opacity .3s;
+		}
+	}
+@include from1024 {
+	.nav__link {
+		&:hover {
+			color: $color-green;
+			font: 900 12px/35px 'MuseoSansCyrillic-900', sans-serif;
+			&:before {
+				transform: scale3d(1,1,1);
+			}
+			span {
+				opacity: 0;
+			}
+		}
+	}
+	.download__link {
+		&:hover {
+			color: $color-green;
+		}
+	}
+	.info-nav__link:hover {
+		color: $color-green;
+	}
+}

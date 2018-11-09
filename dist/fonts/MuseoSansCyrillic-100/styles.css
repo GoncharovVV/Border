@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'MuseoSansCyrillic-100';
+  src: url('MuseoSansCyrillic-100.eot?#iefix') format('embedded-opentype'),  url('MuseoSansCyrillic-100.otf')  format('opentype'),
+	     url('MuseoSansCyrillic-100.woff') format('woff'), url('MuseoSansCyrillic-100.ttf')  format('truetype'), url('MuseoSansCyrillic-100.svg#MuseoSansCyrillic-100') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

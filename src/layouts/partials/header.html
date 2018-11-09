@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<title>{{pageTitle}}</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="photoswipe/photoswipe.css"> 
+	<link rel="stylesheet" href="photoswipe/to/default-skin/default-skin.css"> 
+	<link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+{{> icons}}
+<div class="wrapper">
+	<header class="header">
+		<div class="header__top-row">
+			<div class="container">
+				<div class="download">
+					<img src="images/temp/xls.png" alt="xls" class="download__ico">
+					<a href="" class="download__link">Скачать прайс-лист</a>
+					<span class="downlod__format">(*.xls)</span>
+				</div>
+				<div class="timetable">
+					Принимаем заявки с 8:00 до 21:00
+				</div>
+				<ul class="info-nav__list right-position">
+					<li class="info-nav__list-item">
+						<a class="info-nav__link" href="#">Вопрос-ответ</a>
+					</li>
+					<li class="info-nav__list-item">
+						<a class="info-nav__link" href="#">Важно знать</a>
+					</li>
+					<li class="info-nav__list-item">
+						<a class="info-nav__link" href="#">Контакты</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container header__middle-row">
+			<a href="#" class="main-link" download>
+				<img src="images/logo.png" alt="">
+			</a>
+			<div class="contact-info right-position">
+				<div class="phone">
+					<svg class="svg-icon">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone-indicator"></use>
+					</svg>
+					<span>
+						+7 (903) 969-50-19
+					</span>
+				</div>
+				<div class="email">
+					Пишите нам: <a href="mailto:emailfirm@mail.com">emailfirm@mail.com</a>
+				</div>
+				<div class="contact-info__button-holder">
+					<a href="#" class="btn">
+						<span>Заказать звонок</span>
+					</a>
+				</div>	
+			</div>	
+		</div>
+		<div class="header__bottom-row">
+			<div class="container">
+				<nav class="nav">
+					<ul class="nav__holder">
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>АКЦИИ</span>
+								АКЦИИ
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ВАША ВЫГОДА</span>
+								ВАША ВЫГОДА
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ПРЕИМУЩЕСТВА</span>
+								ПРЕИМУЩЕСТВА
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ПРАЙС-ЛИСТ</span>
+								ПРАЙС-ЛИСТ
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ФОТОГАЛЕРЕЯ</span>
+								ФОТОГАЛЕРЕЯ
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ДОСТАВКА</span>
+								ДОСТАВКА
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>ВОПРОС-ОТВЕТ</span>
+								ВОПРОС-ОТВЕТ
+							</a>
+						</li>
+						<li class="nav__list">
+							<a class="nav__link" href="">
+								<span>КОНТАКТЫ</span>
+								КОНТАКТЫ
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="toggle__info-btn js-toggle" data-parent=".wrapper" data-class="toggle__info">
+			<svg class="svg-icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#info"></use>
+			</svg>
+		</div>
+		<div class="burger__holder js-toggle" data-parent=".wrapper" data-class="toggle__menu">
+			<span class="burger "></span>
+		</div>
+	</header>

@@ -1,0 +1,14 @@
+%form-child-elements {
+    @include to900 {
+        width: calc(33.3% - 2rem);
+        display: inline-block; 
+        margin: 0 3rem 0 0;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    @include to768 {
+        margin: 0 0 10px;
+        width: 100%;
+    }
+}
