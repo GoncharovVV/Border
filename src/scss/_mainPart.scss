@@ -215,15 +215,27 @@
         @include to900 {
             padding: 0;
         }
-
+ 
         @include to768 {
             padding: 5px 0 0;
         }
     }
-
+ 
     .input__holder {
         margin: 0 0 10px;
-        @extend %form-child-elements;
+        width: 100%;
+        @include to900 {
+            width: calc(33.3% - 2rem);
+            display: inline-block; 
+            margin: 0 3rem 10px 0;
+            &:last-child {
+                margin: 0;
+            }
+        }
+        @include to768 {
+            margin: 0 0 10px;
+            width: 100%;
+        }
     }
 
     @include to900 {
@@ -232,6 +244,22 @@
         line-height: 0;
     }
 
+}
+.input__wrapper {
+    @include flex-container($wrap: wrap, $align: flex-start);
+    .input__holder {
+        @include to900 {
+            width: calc(50% - 1rem);
+            margin: 0 2rem 10px 0;
+            &:nth-child(2n) {
+                margin: 0 0 10px; 
+            }
+        }
+        @include to550 {
+            width: 100%;
+            margin: 0 0 10px;
+        }
+    }
 }
 
 .download-form__icon {
@@ -267,6 +295,7 @@
 }
 
 .form__button-more_holder {
+    flex: 1 1 100%;
     padding: 1rem 0 4rem;
     @include flex-container($just: flex-end);
 }
@@ -320,20 +349,41 @@
     font-size: 13px;
     color: $input-color;
     padding: 16px 15px;
+    @include to900 {
+        height: 47px;
+    }
+    @include to900 {
+        height: 37px;
+    }
 }
-
+.select2-container {
+    width: 100%!important;
+}
 .select2-container--default {
     .select2-selection--single {
         border: 1px solid rgb(213, 213, 213);
         border-radius: 0;
         height: 51px;
-
+        @include to900 {
+            height: 47px;
+        }
+        @include to640 {
+            height: 37px;
+        }
         .select2-selection__rendered {
             font-size: 13px;
             color: $input-color;
             line-height: 51px;
             padding-left: 20px;
             padding-right: 35px;
+            @include to900 {
+                height: 47px;
+                line-height: 47px;
+            }
+            @include to640 {
+                height: 37px;
+                line-height: 37px;
+            } 
         }
 
         .select2-selection__arrow {
@@ -346,6 +396,9 @@
                 margin-top: 0;
                 margin-left: 0;
                 transform: translate(-50%, -50%);
+                @include to640 {
+                    border-width: 6px 5px 0 5px;
+                }
             }
         }
     }
@@ -360,6 +413,9 @@
                 margin-top: 0;
                 margin-left: 0;
                 transform: translate(-50%, -50%);
+                @include to640 {
+                    border-width: 0 5px 6px 5px; 
+                }
             }
         }
     }
@@ -1140,7 +1196,23 @@
 
     .form_holder {
         margin: 0 0 4rem;
+        @include to900 {
+            margin: 0 0 1.5rem;
+        }
     }
+    .share__right-column {
+        // @include to900 {
+        //     @include flex-container($wrap: wrap, $align: flex-start);
+        // }
+    }
+    // .download-form {
+    //     .input__holder {
+    //         width: calc(50% - 2rem); 
+    //         &:nth-child(2) {
+    //             margin: 0;
+    //         }           
+    //     }
+    // } 
 }
 
 .album__pictures {
@@ -1151,10 +1223,25 @@
     font-size: 0;
     line-height: 0;
     margin: 0 0 -3rem;
+    @include to1050 {
+        column-gap: 1.5rem;
+        margin: 0 0 -1.5rem;
+    }
+    @include to900 {
+        width: 90%;
+        margin: 0 auto 2rem;
+        padding: 0;
+    }
+    @include to550 {
+        column-count: 2;
+    }
 }
 
 .album-wrapper {
     @include flex-container($just: space-between, $align: flex-start);
+    @include to900 {
+        flex-wrap: wrap;
+    }
 }
 
 .pictures-item {
@@ -1162,7 +1249,9 @@
     display: inline-block;
     width: 100%;
     margin: 0 0 3rem;
-
+    @include to1050 {
+        margin: 0 0 1.5rem;
+    }
     &:last-child {
         margin: 0;
     }
@@ -1172,7 +1261,12 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-
+    @include to900 {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
     &::before {
         content: '';
         position: absolute;
@@ -1266,4 +1360,66 @@
 .picture__text_small {
     padding: 5px 0 0;
     text-transform: lowercase;
+}
+.paper {
+    padding: 8rem 0;
+    background-image: url(/images/temp/paper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+.paper__item {
+    width: calc(33.33% - 2rem);
+    margin-right: 3rem;
+    &:nth-child(3n) { 
+        margin-right: 0; 
+    }
+}
+.paper__item-img {
+    border: 4px solid #d5d5d5;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 58.19%;
+    width: 100%;
+}
+.paper__item-img_holder {
+    margin: 0 0 3rem;
+}
+.paper__item-title {
+    margin: 0 0 2.5rem; 
+    font-size: 16px;
+    font-family: 'MuseoSansCyrillic-500';
+}
+.paper__description {
+    font-family: 'MuseoSansCyrillic-300';
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0 0 2.5rem;
+    max-height: 75px;
+    transition: max-height .3s;
+    overflow: hidden;
+}
+.paper__description.show {
+    max-height: 900px;
+}
+.paper__item-btn {
+    color: $color-yellow;
+    text-shadow: none;
+    &:before {
+        border-radius: 8px;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        transition: transform .4s, border-radius .3s, opacity .3s;        
+    }
+    @include from1024 {
+		&:hover {
+            color: $color-white;
+        	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			&:before {
+                border-radius: 50%;
+				opacity: 0;
+				transform: scale3d(0, 0, 0);
+				transition: transform .4s, border-radius .3s, opacity .3s;
+			}
+		}
+	}
 }

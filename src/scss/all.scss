@@ -249,7 +249,9 @@ body {
 	text-transform: uppercase;
 	position: relative;
 	transition: color .3s, text-shadow .3s;
-
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	@include to1024 {
 		padding: 11px 18px;
 		border-radius: 8px;

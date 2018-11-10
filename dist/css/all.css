@@ -557,6 +557,15 @@ body {
 	-webkit-transition: color .3s, text-shadow .3s;
 	-o-transition: color .3s, text-shadow .3s;
 	transition: color .3s, text-shadow .3s;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1470,6 +1479,25 @@ body {
 
 .download-form .input__holder {
 	margin: 0 0 10px;
+	width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+	.download-form .input__holder {
+		width: calc(33.3% - 2rem);
+		display: inline-block;
+		margin: 0 3rem 10px 0;
+	}
+	.download-form .input__holder:last-child {
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.download-form .input__holder {
+		margin: 0 0 10px;
+		width: 100%;
+	}
 }
 
 @media only screen and (max-width: 900px) {
@@ -1477,6 +1505,34 @@ body {
 		padding: 10px 15px 10px;
 		font-size: 0;
 		line-height: 0;
+	}
+}
+
+.input__wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+	.input__wrapper .input__holder {
+		width: calc(50% - 1rem);
+		margin: 0 2rem 10px 0;
+	}
+	.input__wrapper .input__holder:nth-child(2n) {
+		margin: 0 0 10px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.input__wrapper .input__holder {
+		width: 100%;
+		margin: 0 0 10px;
 	}
 }
 
@@ -1521,6 +1577,9 @@ body {
 }
 
 .form__button-more_holder {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 100%;
+	        flex: 1 1 100%;
 	padding: 1rem 0 4rem;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1593,10 +1652,38 @@ body {
 	padding: 16px 15px;
 }
 
+@media only screen and (max-width: 900px) {
+	.select_custom {
+		height: 47px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.select_custom {
+		height: 37px;
+	}
+}
+
+.select2-container {
+	width: 100% !important;
+}
+
 .select2-container--default .select2-selection--single {
 	border: 1px solid #d5d5d5;
 	border-radius: 0;
 	height: 51px;
+}
+
+@media only screen and (max-width: 900px) {
+	.select2-container--default .select2-selection--single {
+		height: 47px;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.select2-container--default .select2-selection--single {
+		height: 37px;
+	}
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -1605,6 +1692,20 @@ body {
 	line-height: 51px;
 	padding-left: 20px;
 	padding-right: 35px;
+}
+
+@media only screen and (max-width: 900px) {
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		height: 47px;
+		line-height: 47px;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		height: 37px;
+		line-height: 37px;
+	}
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -1622,6 +1723,12 @@ body {
 	        transform: translate(-50%, -50%);
 }
 
+@media only screen and (max-width: 640px) {
+	.select2-container--default .select2-selection--single .select2-selection__arrow b {
+		border-width: 6px 5px 0 5px;
+	}
+}
+
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
 	border-width: 0 6px 8px 6px;
 	border-color: transparent transparent #7f7f7f transparent;
@@ -1630,6 +1737,12 @@ body {
 	-webkit-transform: translate(-50%, -50%);
 	    -ms-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 640px) {
+	.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+		border-width: 0 5px 6px 5px;
+	}
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
@@ -2645,6 +2758,12 @@ body {
 	margin: 0 0 4rem;
 }
 
+@media only screen and (max-width: 900px) {
+	.album .form_holder {
+		margin: 0 0 1.5rem;
+	}
+}
+
 .album__pictures {
 	-webkit-column-count: 3;
 	        column-count: 3;
@@ -2659,6 +2778,29 @@ body {
 	margin: 0 0 -3rem;
 }
 
+@media only screen and (max-width: 1050px) {
+	.album__pictures {
+		-webkit-column-gap: 1.5rem;
+		        column-gap: 1.5rem;
+		margin: 0 0 -1.5rem;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.album__pictures {
+		width: 90%;
+		margin: 0 auto 2rem;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.album__pictures {
+		-webkit-column-count: 2;
+		        column-count: 2;
+	}
+}
+
 .album-wrapper {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2671,10 +2813,23 @@ body {
 	        justify-content: space-between;
 }
 
+@media only screen and (max-width: 900px) {
+	.album-wrapper {
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+}
+
 .pictures-item {
 	display: inline-block;
 	width: 100%;
 	margin: 0 0 3rem;
+}
+
+@media only screen and (max-width: 1050px) {
+	.pictures-item {
+		margin: 0 0 1.5rem;
+	}
 }
 
 .pictures-item:last-child {
@@ -2685,6 +2840,15 @@ body {
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+	.picture {
+		width: 100%;
+	}
+	.picture img {
+		width: 100%;
+	}
 }
 
 .picture::before {
@@ -2784,6 +2948,91 @@ body {
 	text-transform: lowercase;
 }
 
+.paper {
+	padding: 8rem 0;
+	background-image: url(/images/temp/paper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.paper__item {
+	width: calc(33.33% - 2rem);
+	margin-right: 3rem;
+}
+
+.paper__item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.paper__item-img {
+	border: 4px solid #d5d5d5;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 58.19%;
+	width: 100%;
+}
+
+.paper__item-img_holder {
+	margin: 0 0 3rem;
+}
+
+.paper__item-title {
+	margin: 0 0 2.5rem;
+	font-size: 16px;
+	font-family: 'MuseoSansCyrillic-500';
+}
+
+.paper__description {
+	font-family: 'MuseoSansCyrillic-300';
+	font-size: 14px;
+	line-height: 1.3;
+	margin: 0 0 2.5rem;
+	max-height: 75px;
+	-webkit-transition: max-height .3s;
+	-o-transition: max-height .3s;
+	transition: max-height .3s;
+	overflow: hidden;
+}
+
+.paper__description.show {
+	max-height: 900px;
+}
+
+.paper__item-btn {
+	color: #ffaf00;
+	text-shadow: none;
+}
+
+.paper__item-btn:before {
+	border-radius: 8px;
+	opacity: 1;
+	-webkit-transform: scale3d(1, 1, 1);
+	        transform: scale3d(1, 1, 1);
+	-webkit-transition: border-radius .3s, opacity .3s, -webkit-transform .4s;
+	transition: border-radius .3s, opacity .3s, -webkit-transform .4s;
+	-o-transition: transform .4s, border-radius .3s, opacity .3s;
+	transition: transform .4s, border-radius .3s, opacity .3s;
+	transition: transform .4s, border-radius .3s, opacity .3s, -webkit-transform .4s;
+}
+
+@media only screen and (min-width: 1024px) {
+	.paper__item-btn:hover {
+		color: #fff;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	}
+	.paper__item-btn:hover:before {
+		border-radius: 50%;
+		opacity: 0;
+		-webkit-transform: scale3d(0, 0, 0);
+		        transform: scale3d(0, 0, 0);
+		-webkit-transition: border-radius .3s, opacity .3s, -webkit-transform .4s;
+		transition: border-radius .3s, opacity .3s, -webkit-transform .4s;
+		-o-transition: transform .4s, border-radius .3s, opacity .3s;
+		transition: transform .4s, border-radius .3s, opacity .3s;
+		transition: transform .4s, border-radius .3s, opacity .3s, -webkit-transform .4s;
+	}
+}
+
 .items__holder {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2802,20 +3051,20 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-	.download-form .form__button, .download-form .input__holder, .request-form .input__holder,
+	.download-form .form__button, .request-form .input__holder,
 	.request-form .form__button {
 		width: calc(33.3% - 2rem);
 		display: inline-block;
 		margin: 0 3rem 0 0;
 	}
-	.download-form .form__button:last-child, .download-form .input__holder:last-child, .request-form .input__holder:last-child,
+	.download-form .form__button:last-child, .request-form .input__holder:last-child,
 	.request-form .form__button:last-child {
 		margin: 0;
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	.download-form .form__button, .download-form .input__holder, .request-form .input__holder,
+	.download-form .form__button, .request-form .input__holder,
 	.request-form .form__button {
 		margin: 0 0 10px;
 		width: 100%;
