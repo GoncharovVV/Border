@@ -1365,14 +1365,38 @@
     padding: 8rem 0;
     background-image: url(/images/temp/paper.jpg);
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: cover;   
+    @include to768 {
+        .items__holder {
+            justify-content: center;
+        }
+    } 
 }
 .paper__item {
     width: calc(33.33% - 2rem);
     margin-right: 3rem;
+    @include to768 {
+        width: calc(50% - 1rem); 
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        &:nth-child(2n) {
+            margin-right: 0;  
+        }
+    }
+    @include to500 {
+        margin-right: 0;
+        width: 100%;
+    }
     &:nth-child(3n) { 
         margin-right: 0; 
+        @include to768 {
+            margin-right: 2rem;
+        }
+        @include to500 {
+            margin-right: 0;
+        }
     }
+
 }
 .paper__item-img {
     border: 4px solid #d5d5d5;
@@ -1423,3 +1447,124 @@
 		}
 	}
 }
+.btn {
+    .open-text {
+        display: none;
+    } 
+}
+.btn.open {
+    .open-text {
+        display: inline-block;
+    }
+    .close-text {
+        display: none;
+    }
+}
+.question {
+    padding: 7rem 0 13rem; 
+    background-image: url(/images/temp/question-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    .items__holder {
+        justify-content: space-between; 
+    }
+} 
+.quetion-item {
+    margin: 0 0 6.5rem;
+    width: calc(50% - 1.5rem); 
+    @include to700 {
+        width: 100%;  
+    }
+}
+.quetion-item__top {
+    @include flex-container($align: center);
+    margin: 0 0 2rem;  
+}
+.quetion-item__mark {
+    font-size: 2.4rem;
+    color: $color-white;
+    text-transform: uppercase;
+    line-height: 1.2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    width: 4.8rem;
+    height: 4.8rem;
+    flex-shrink: 0;
+    margin-right: 3rem;
+} 
+  
+.red-mark {
+    background-color: $color-red;
+}
+.green-mark {
+    background-color: $color-green;
+}
+.quetion-item__bottom {
+    @include flex-container($align: flex-start);
+}
+.quetion-item__bottom-text {
+    font-size: 14px;
+    font-family: 'MuseoSansCyrillic-300';
+    color: $color-dark; 
+    line-height: 1.2;
+    background-color: #efefef;
+    padding: 2rem 3rem;
+}
+.quetion-item__top-text {
+    font-family: 'MuseoSansCyrillic-700';
+    font-size: 16px;
+    line-height: 1.2;
+    color: $color-dark; 
+}
+    
+.benefits {
+    background-image: url(/images/temp/benefit-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;    
+    padding: 3rem; 
+    .items__holder {
+        justify-content: space-between;
+    }
+}
+.benefits__item {
+    width: calc(25% - 3rem);
+    @include flex-container($align: center);
+    @include to1024 {
+        width: calc(50% - 2rem);
+        margin-bottom: 2rem;
+    }
+    @include to640 {
+        width: 100%;
+    }
+}
+.benefits__item-mark {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    background-color: $color-salad;
+    border-radius: 50%;
+    @include flex-container($align: center, $just: center);
+    margin-right: 20px;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: -10px;
+        z-index: 1;
+        height: 100%;
+        width: 3px;
+        background-color: $color-yellow-light;
+    }
+    .icon-check {
+        font-size: 2.5rem;
+    }
+}
+.benefits__item-text {
+    font-size: 14px;
+	font-family: 'MuseoSansCyrillic-700';
+    color: $color-white;
+}
+  
